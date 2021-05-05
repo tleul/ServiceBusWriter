@@ -1,7 +1,16 @@
 const express = require('express')
 
 app = express();
+PORT = process.env.PORT || 8080
 
-app.listen(8080, function () {
-console.log('server up' )
+
+
+
+app.use('/api/write',require('./routes/serviceWriter'))
+
+
+app.listen(PORT, function () {
+console.log('server is up ' + PORT )
+
+
 } )
